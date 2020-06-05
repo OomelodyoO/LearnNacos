@@ -4,14 +4,23 @@ spring:
   cloud:
     nacos:
       server-addr: localhost:8848
+      # config 读取 ${spring.cloud.nacos.config.prefix}-${spring.profiles.active}.${file-extension}
+      # ${spring.cloud.nacos.config.prefix}默认${spring.application.name}
       config:
-        #        prefix: service1
+        prefix: user
         file-extension: yaml
-        group: EMPLOYEE
+        group: LEAD
         namespace: DEV
-        name: service1-dev1
+#        name: service1-dev1
       discovery:
-        group: user-group
+        group: LEAD
         namespace: DEV
-server:
-  port: 9001
+      sentinel:
+        transport:
+          port: 8719
+          dashboard: localhost:8080
+  profiles:
+    active: dev
+feign:
+  sentinel:
+    enabled: true

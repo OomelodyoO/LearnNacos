@@ -13,6 +13,8 @@ public class BaseController {
 
     @Value("${zhang.zhi.xing: 1}")
     private Integer zhangzhixing;
+    @Value("${zhang.zhi.guang: 1}")
+    private Integer zhangzhiguang;
 
     @GetMapping
     public String base() {
@@ -22,5 +24,10 @@ public class BaseController {
     @GetMapping(value = "/age")
     public Integer age(){
         return zhangzhixing;
+    }
+
+    @GetMapping(value = "/age1")
+    public Integer age1(){
+        return zhangzhiguang;
     }
 }
