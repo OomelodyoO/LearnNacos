@@ -1,0 +1,3 @@
+rootProject.name = 'learnNacos'
+include 'spring-cloud-nacos-user'
+include 'spring-cloud-nacos-service'

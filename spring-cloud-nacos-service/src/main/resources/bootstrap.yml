@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: service
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      config:
+#        prefix: service1
+        file-extension: yaml
+        group: EMPLOYEE
+        namespace: DEV
+        name: service1-dev1
+      discovery:
+        group: service-group
+        namespace: DEV
+server:
+  port: 9101
